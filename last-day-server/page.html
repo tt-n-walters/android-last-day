@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Android Last Day</title>
+        <meta charset="utf-8" />
+        <style>
+        html {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+            padding: 40px;
+            overflow: hidden;
+            background: #f1d4d4;
+        }
+        #container {
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background: #ffffff;
+            border-radius: 5px;
+        }
+        #header {
+            text-align: center;
+            font-size: 28pt;
+        }
+        #mainpage {
+            display: none;
+            /* background: blue; */
+        }
+        #question {
+            display: none;
+            height: 20px;
+            background: orange;
+        }
+        #points {
+            display: none;
+            height: 20px;
+            background: magenta;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">Android Last Day</div>
+            <div id="mainpage">
+                <div id="players"></div>
+                <button id="start">Start</button>
+            </div>
+            <div id="question">
+                <div id="questiontext"></div>
+                <div id="answer0"></div>
+                <div id="answer1"></div>
+                <div id="answer2"></div>
+                <div id="answer3"></div>
+                <button id="checkanswers">Check Answers</button>
+            </div>
+            <div id="points">
+
+                <button id="nextquestion">Next question</button>
+            </div>
+        </div>
+        <script>
+        "use strict";
+        
+        let path = "/quiz"
+        const loop = () => fetch(path)
+            .then(res => res.json())
+            .then(res => {
+                if (res.state == "pending") {
+                    mainpage.style.display = "block";
+                    let names = "";
+                    res.users.forEach(user => names += user.name + "<br>");
+                    players.innerHTML = names;
+                } else if (res.state == "running") {
+                    path = "/control/question/get"
+                    question.style.display = "block";
+                } else if (res.state == "complete") {
+                    points.style.display = "block";
+                } else if (res.question) {
+                    questiontext.innerText = res.question;
+                    answer0.innerText = res.answers[0];
+                    answer1.innerText = res.answers[1];
+                    answer2.innerText = res.answers[2];
+                    answer3.innerText = res.answers[3];
+                }
+            });
+        setInterval(loop, 1000);
+        start.onclick = () => fetch("/control/state/running").then(() => window.location = window.location);
+        checkanswers.onclick = () => fetch("/control/state/complete").then(() => window.location = window.location);
+        nextquestion.onclick = () => fetch("/control/question/next").then(() => fetch("/control/state/running").then(() => window.location = window.location));
+        </script>
+    </body>
+</html>

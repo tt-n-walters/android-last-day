@@ -1,0 +1,98 @@
+[
+    {
+        "question": "Which company developes the Android Operating System?",
+        "answers": [
+            "Microsoft", "Apple", "Google", "IBM"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "The main language of Android is what programming language?",
+        "answers": [
+            "JavaScript", "XML", "C++", "Java"
+        ],
+        "correct": 3
+    },
+    {
+        "question": "The main programming language for Android is slowly changing to what?",
+        "answers": [
+            "C++", "Kotlin", "JavaScript", "Python"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What is the name of a screen in Android; that has 1 .xml file and one .java file?",
+        "answers": [
+            "Action", "Activity", "Alibi", "Alterative" 
+        ],
+        "correct": 1
+    },
+    {
+        "question": "Can we use Processing with Android?",
+        "answers": [
+            "Yes", "No", "If we try really hard", "" 
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is a class in Java?",
+        "answers": [
+            "A blueprint for creating " 
+        ],
+        "correct": 
+    },
+    {
+        "question": "What do you think this code will do?<br><br>Intent intent = new Intent(this, SecondActivity.class);<br>startActivity(intent);",
+        "answers": [
+            "It will close the app.",
+            "It will open a version of Google Maps.",
+            "It will open an activity called \"SecondActivity\"",
+            "It will do nothing at all." 
+        ],
+        "correct": 2
+    },
+    {
+        "question": "I have a button. Which of the following code will make this button able to be clicked on?",
+        "answers": [
+            "button.addClicking(clickingFunction);",
+            "button.setOnClickListener(new OnClickListener() {...",
+            "button.addChangeListener(when clicked do something);",
+            "button.setOnClickListener();"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "What does \"CPU\" stand for?",
+        "answers": [
+            "Completely Powerful Unit",
+            "Central Park Umbrella",
+            "Central Processing Unit",
+            "C" 
+        ],
+        "correct": 2
+    },
+    {
+        "question": "How many CPUs do modern computers have?",
+        "answers": [
+            "One", "At least 100", "Normally 2, 4, or 8", "Modern computers do not have CPUs" 
+        ],
+        "correct": 2
+    },
+    {
+        "question": "Why is the first CPU so important in Android?",
+        "answers": [
+            "Becuase the first CPU updates the screen, and changes what we can see.",
+            "Because it's the first. And the first is always the most important.",
+            "Because the first CPU is the fastest.",
+            "The first CPU isn't the most important." 
+        ],
+        "correct": 0
+    },
+    {
+        "question": "",
+        "answers": [
+            "" 
+        ],
+        "correct": 
+    }
+]
